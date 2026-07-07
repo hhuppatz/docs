@@ -68,6 +68,18 @@ Depending on the visual impact you want, there are three ways to configure the b
   <Tab title="Video background">
     A looping video plays silently behind the heading, creating a dynamic and engaging hero section. This is ideal for campaigns, landing pages, or any context where motion adds energy.
 
+    The preview below uses the component's actual markup and styles. On your published page the background is a silently looping video, and the pause button in the bottom-right corner lets visitors stop it.
+
+    <div className="hh-example hh-example--flush">
+      <section className="banner">
+        <img className="banner__media" src="https://picsum.photos/seed/hh-banner-video/1500/500" alt="Still frame representing the looping background video" />
+        <div className="banner__content">
+          <p className="banner__title">Discover our summer campaign</p>
+        </div>
+        <button className="banner__button banner__button--pause" aria-label="Pause decorative video in the banner's background"></button>
+      </section>
+    </div>
+
     **Required fields for this variant:**
 
     | Field | Value |
@@ -101,6 +113,17 @@ Depending on the visual impact you want, there are three ways to configure the b
   <Tab title="Image background">
     A still image fills the full width of the banner behind the heading. This is the most versatile option and works well for most pages.
 
+    The preview below uses the component's actual markup and styles — including the dark overlay that keeps the heading readable over any image.
+
+    <div className="hh-example hh-example--flush">
+      <section className="banner">
+        <img className="banner__media" src="https://picsum.photos/seed/hh-banner-image/1500/500" alt="Wide-format banner background image" />
+        <div className="banner__content">
+          <p className="banner__title">Welcome to our community hub</p>
+        </div>
+      </section>
+    </div>
+
     **Required fields for this variant:**
 
     | Field | Value |
@@ -133,6 +156,17 @@ Depending on the visual impact you want, there are three ways to configure the b
 
   <Tab title="Flat colour (no media)">
     No image or video is used. The banner displays a flat background colour defined by your site's brand styles, with the heading rendered over it.
+
+    The preview below uses the component's actual markup and styles:
+
+    <div className="hh-example hh-example--flush">
+      <section className="banner">
+        <div className="banner__background--default"></div>
+        <div className="banner__content">
+          <p className="banner__title">About our organisation</p>
+        </div>
+      </section>
+    </div>
 
     **Required fields for this variant:**
 

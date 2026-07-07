@@ -1,0 +1,349 @@
+/* ==========================================================================
+   HH component example previews
+   --------------------------------------------------------------------------
+   Faithful reproductions of the UltraCX Component Library styles
+   (DXP-Components-Playground) so the docs show components exactly as they
+   render on the live site. Values are compiled from:
+   - src/styles/common/_variables.scss  (design tokens, toRem: px/16)
+   - src/styles/common/fonts.scss       (heading/paragraph typography)
+   - dxp/component-service/<name>/css   (per-component styles)
+   Everything is scoped under .hh-example so nothing leaks into the
+   Mintlify UI, and previews keep the real site's light appearance even
+   when the docs are in dark mode.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+/* --- Preview frame (docs chrome, not part of the component) --------------- */
+
+.hh-example {
+  background-color: rgb(255 255 255);
+  color: rgb(0 0 0);
+  font-family: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border: 1px solid rgb(226 226 226);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1rem 0 2rem;
+  overflow: hidden;
+}
+
+/* Flush variant for full-bleed components (Banner) */
+.hh-example--flush {
+  padding: 0;
+}
+
+/* Neutralise docs-theme typography inside previews (site defaults apply) */
+.hh-example p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: inherit;
+}
+
+.hh-example img {
+  display: block;
+  max-width: 100%;
+}
+
+/* h2 / .heading-secondary — fonts.scss */
+.hh-example .heading-secondary {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  color: rgb(0 0 0);
+  margin: 1.5rem 0;
+}
+
+.hh-example > section > .heading-secondary:first-child,
+.hh-example .heading-secondary:first-child {
+  margin-top: 0;
+}
+
+/* ==========================================================================
+   HH – Accordion  (hh-accordion/css/accordion.scss)
+   Note: the source declares item borders with `rgb(var(--color-text) 0.2)`,
+   which is invalid CSS, so no borders render on the live site. Reproduced
+   faithfully here (no borders).
+   ========================================================================== */
+
+.hh-example .accordion__item {
+  margin: 0;
+}
+
+.hh-example .accordion__heading {
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  gap: 1rem;                            /* --spacing-sm */
+  align-content: center;
+  padding: 1rem;                        /* --spacing-sm */
+  background-color: rgb(239 239 239);   /* --color-bg-alt */
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: rgb(0 0 0);
+  list-style: none;
+}
+
+.hh-example .accordion__heading::-webkit-details-marker {
+  display: none;
+}
+
+.hh-example .accordion__heading:hover {
+  background-color: rgb(194 194 194);   /* --primary-darker */
+}
+
+.hh-example .accordion__heading::after {
+  content: '';
+  display: inline-block;
+  min-width: 1rem;
+  width: 1rem;
+  height: 1rem;
+  border-right: 3px solid currentcolor;
+  border-bottom: 3px solid currentcolor;
+  transform: rotate(45deg);
+  margin-left: auto;
+}
+
+.hh-example .accordion__item[open] .accordion__heading::after {
+  transform: rotate(-135deg);
+}
+
+.hh-example .accordion__content {
+  display: none;
+}
+
+.hh-example .accordion__item[open] .accordion__content {
+  display: block;
+  padding: 1rem;
+  border-top: 1px solid rgb(239 239 239);
+}
+
+/* ==========================================================================
+   HH – Block Quote  (hh-blockquote/css/blockquote.scss)
+   ========================================================================== */
+
+.hh-example .blockquote {
+  border-left: 1px solid rgb(0 0 0);    /* --black */
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  background: none;
+  color: rgb(0 0 0);
+  font-size: 1rem;
+  line-height: 1.75rem;                 /* --line-height-md */
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  quotes: none;
+}
+
+.hh-example .blockquote__content {
+  padding: 0 1.875rem;                  /* toRem(30) */
+}
+
+.hh-example .blockquote__content p {
+  margin: 0;
+  line-height: inherit;
+}
+
+.hh-example .blockquote__author {
+  margin-top: 0.5rem;                   /* toRem(8) */
+  font-size: 0.875rem;                  /* --font-size-xs */
+  font-weight: 500;                     /* --font-semibold */
+  font-style: normal;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   HH – Banner  (hh-banner/css/banner.scss)
+   ========================================================================== */
+
+.hh-example .banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hh-example .banner__media {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  max-height: 100%;
+  min-height: 25rem;                    /* toRem(400) */
+  margin: 0;
+}
+
+.hh-example .banner__background--default {
+  background-color: rgb(204 204 204);   /* --default-background-color */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hh-example .banner__content {
+  padding: 2rem 8.5rem;                 /* toRem(32) toRem(136) */
+  position: relative;
+  background: rgb(0 0 0 / 50%);         /* --overlay-background */
+  color: rgb(255 255 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 25rem;                    /* toRem(400) */
+  margin: 0;
+}
+
+@media screen and (max-width: 62rem) {
+  .hh-example .banner__content {
+    padding: 1.5rem 1rem 5rem;          /* toRem(24) toRem(16) toRem(80) */
+  }
+}
+
+/* h1 typography from fonts.scss applied over the banner */
+.hh-example .banner__title {
+  color: rgb(255 255 255);
+  margin: 0;
+  font-size: 3rem;                      /* --font-size-xxl */
+  line-height: 3rem;                    /* --line-height-xxl */
+  font-weight: 500;                     /* --font-semibold */
+}
+
+.hh-example .banner__button {
+  width: 2.25rem;                       /* toRem(36) */
+  height: 3rem;                         /* toRem(48) */
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background-size: cover;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.hh-example .banner__button--pause {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgZmlsbD0id2hpdGUiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDg3LjcyIDEyMi44OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgODcuNzIgMTIyLjg4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7fTwvc3R5bGU+PGc+PHBhdGggY2xhc3M9InN0MCIgZD0iTTAsMGgzNS41NHYxMjIuODhsLTM1LjU0LDBWMEwwLDB6IE01Mi4xOCwwaDM1LjU0djEyMi44OGwtMzUuNTQsMFYwTDUyLjE4LDB6Ii8+PC9nPjwvc3ZnPg==')
+    no-repeat center;
+}
+
+/* ==========================================================================
+   HH – Card  (shared-cards.scss + hh-card markup)
+   Cards live in a grid container on the real site; .hh-example-cards stands
+   in for that layout wrapper in the docs.
+   ========================================================================== */
+
+.hh-example-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .hh-example-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hh-example .cards__card {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hh-example .cards__card:not(.cards__card--has-image) {
+  background-color: rgb(0 0 0);         /* --color-text */
+}
+
+.hh-example .cards__card-link {
+  padding: 1.5rem;                      /* --spacing-md */
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.hh-example .cards__heading {
+  text-transform: uppercase;
+  line-height: 2.5rem;                  /* --line-height-xl */
+  font-size: 1.25rem;                   /* --font-size-sm */
+  max-width: 100%;
+  margin: 1.5rem 0;
+  margin-top: auto;
+  font-weight: 600;                     /* --font-bold */
+}
+
+.hh-example .cards__heading span {
+  padding: 0.5rem;                      /* --spacing-xs */
+  color: rgb(255 255 255);              /* --color-bg */
+  background-color: rgb(0 0 0);         /* --color-text */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: padding 0s ease;
+}
+
+.hh-example .cards__content-type {
+  color: rgb(191 24 35);                /* --accent */
+  text-transform: capitalize;
+  font-size: 0.875rem;                  /* --font-size-xs */
+  line-height: 2rem;                    /* --line-height-lg */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hh-example .cards__image {
+  filter: saturate(50%);
+  width: 100%;
+}
+
+/* Hidden until hover, as on the live site */
+.hh-example .cards__content-type,
+.hh-example .cards__supporting-text {
+  overflow: hidden;
+  margin: 0;
+  display: none;
+  transition:
+    opacity 0.4s ease-in-out,
+    max-height 0.4s ease-in-out;
+}
+
+.hh-example .cards__card:hover {
+  background-color: rgb(0 0 0);         /* --color-text */
+}
+
+.hh-example .cards__card:hover .cards__heading {
+  line-height: 2rem;                    /* --line-height-lg */
+  margin: 0;
+}
+
+.hh-example .cards__card:hover .cards__content-type {
+  display: block;
+}
+
+.hh-example .cards__card:hover .cards__supporting-text {
+  color: rgb(255 255 255);              /* --color-bg */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hh-example .cards__card:hover span {
+  padding: 0;
+}

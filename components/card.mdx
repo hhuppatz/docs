@@ -135,19 +135,43 @@ The Card component is flexible — you can use any combination of fields to matc
 
 ## Example card grid
 
-Place multiple Card components inside a grid or columns container to create a consistent, structured layout like the one below.
+Place multiple Card components inside a grid or columns container to create a consistent, structured layout like the one below. This preview uses the component's actual markup and styles, so it looks and behaves exactly as it does on your published site.
 
-<CardGroup cols={3}>
-  <Card title="Oil Painting Session" icon="palette">
-    **Painting** · Explore our beginner-friendly evening classes running every Thursday from 6 pm.
-  </Card>
-  <Card title="Cloud Hosting" icon="cloud">
-    **Service** · Scalable, secure hosting managed end-to-end by our infrastructure team.
-  </Card>
-  <Card title="Meet Jane Smith" icon="user">
-    **Team Member** · Senior Product Designer with 10 years of experience in UX and brand systems.
-  </Card>
-</CardGroup>
+<Note>
+  **Hover over a card** to see its full behaviour: the content-type label, supporting text, and link text are revealed on hover, exactly as they are for your visitors.
+</Note>
+
+<div className="hh-example">
+  <div className="hh-example-cards">
+    <div className="card--single cards__card cards__card--has-image">
+      <a href="#example-card-grid" className="cards__card-link">
+        <img className="cards__image" src="https://picsum.photos/seed/hh-card-painting/600/400" alt="Paint brushes resting on a palette" />
+        <p className="cards__content-type">Painting</p>
+        <p className="cards__heading"><span>Oil painting session</span></p>
+        <div className="cards__supporting-text">Explore our beginner-friendly evening classes, running every Thursday from 6 pm.</div>
+        <p className="cards__content-type cards__supporting-text cards__cta">Read more</p>
+      </a>
+    </div>
+    <div className="card--single cards__card">
+      <a href="#example-card-grid" className="cards__card-link">
+        <p className="cards__content-type">Service</p>
+        <p className="cards__heading"><span>Cloud hosting</span></p>
+        <div className="cards__supporting-text">Scalable, secure hosting managed end-to-end by our infrastructure team.</div>
+        <p className="cards__content-type cards__supporting-text cards__cta">View plans</p>
+      </a>
+    </div>
+    <div className="card--single cards__card cards__card--has-image">
+      <a href="#example-card-grid" className="cards__card-link">
+        <img className="cards__image" src="https://picsum.photos/seed/hh-card-team/600/400" alt="Portrait of a team member" />
+        <p className="cards__content-type">Team member</p>
+        <p className="cards__heading"><span>Jane Smith</span></p>
+        <div className="cards__supporting-text">Senior Product Designer with 10 years of experience in UX and brand systems.</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+Notice how the middle card, which has no image, renders with the solid dark background — the same fallback your visitors see when you leave the `image` field blank.
 
 ---
 
