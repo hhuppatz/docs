@@ -1,0 +1,115 @@
+---
+title: "How to Add a Component to Your Page"
+sidebarTitle: "Add a Component"
+description: "Step-by-step instructions for finding, adding, configuring, and publishing UltraCX components in the Squiz Matrix Visual Page Builder."
+---
+
+Adding a UltraCX component to your page takes just a few steps inside the Squiz Matrix Visual Page Builder. You search for the component by its 'HH –' prefix, fill in the fields, and publish — no code required. This guide walks you through the full process, including how to remove or reorder components once they're on the page.
+
+## Add a component to your page
+
+<Steps>
+  <Step title="Open the Visual Page Builder">
+    Log in to Squiz Matrix and navigate to the page you want to edit. Open the page's edit view and select the **Visual Page Builder** tab to launch the builder.
+  </Step>
+
+  <Step title="Add a content block (if the page is empty)">
+    If your page has no content blocks yet, click **Add content block** to create a layout zone where components can live. If the page already has content blocks, skip this step and go directly to the zone where you want the component to appear.
+
+    <Note>
+      A content block is the structural container that holds one or more components. You must have at least one content block on the page before you can add a component.
+    </Note>
+  </Step>
+
+  <Step title="Click 'Add component'">
+    Inside the content block where you want the component, click the **Add component** button. The component browser panel opens on the right side of the screen.
+  </Step>
+
+  <Step title="Search for the component">
+    In the component browser's search field, type **HH** to filter the list to UltraCX components. You'll see the four available components listed with their 'HH –' prefix:
+
+    - **HH – Accordion**
+    - **HH – Banner**
+    - **HH – Block Quote**
+    - **HH – Card**
+
+    <Tip>
+      Can't see any 'HH –' components? Ask your Squiz Matrix administrator to confirm that the UltraCX component set has been added to your site's component sets in the DXP Console.
+    </Tip>
+  </Step>
+
+  <Step title="Select the component">
+    Click the component you want to add. The component is inserted into the content block and its configuration form appears, showing all the editable fields.
+  </Step>
+
+  <Step title="Fill in the component fields">
+    Complete the fields in the configuration form. Each component has its own set of fields — refer to the individual component guides for a full description of every field:
+
+    - [Accordion fields](/components/accordion) — section title, plus one or more accordion items each with a heading and body content
+    - [Banner fields](/components/banner) — media type (video, image, or none), heading, and the corresponding media asset
+    - [Blockquote fields](/components/blockquote) — section title, quote text, and author name
+    - [Card fields](/components/card) — content type label, heading, supporting text, image, and link
+
+    You can also edit text fields directly in the page preview by clicking on the text element and typing in place.
+
+    <Note>
+      Required fields are marked in the form. You must complete all required fields before you can save the page.
+    </Note>
+  </Step>
+
+  <Step title="Save and publish the page">
+    Once you've filled in all the required fields, click **Save** to store your changes. To make the page live, click **Publish** (or your site's equivalent publish action). The component will appear on the public page immediately after publishing.
+
+    <Warning>
+      Saving a page keeps your changes in draft. Visitors won't see the new component until you publish the page.
+    </Warning>
+  </Step>
+</Steps>
+
+---
+
+## Remove a component
+
+If you need to take a component off the page, follow these steps:
+
+<Steps>
+  <Step title="Select the component">
+    In the Visual Page Builder, click the component you want to remove to select it. A context toolbar appears above or alongside the component.
+  </Step>
+
+  <Step title="Delete the component">
+    Click the **Delete** (trash) icon in the component's context toolbar. Confirm the deletion when prompted.
+  </Step>
+
+  <Step title="Publish the page">
+    Click **Publish** to apply the removal to the live page.
+  </Step>
+</Steps>
+
+<Warning>
+  Deleting a component is permanent within the current draft. If you accidentally remove a component, close the page without saving to discard the change — provided you haven't saved since the deletion.
+</Warning>
+
+---
+
+## Reorder components
+
+You can change the order of components within a content block at any time:
+
+<Steps>
+  <Step title="Hover over the component you want to move">
+    In the Visual Page Builder, hover over the component to reveal its drag handle (a grid of dots icon, usually on the left edge of the component).
+  </Step>
+
+  <Step title="Drag the component to its new position">
+    Click and hold the drag handle, then drag the component up or down to the position you want. A drop indicator shows where the component will land.
+  </Step>
+
+  <Step title="Release and publish">
+    Release the mouse button to drop the component in its new position, then click **Publish** to make the new order live.
+  </Step>
+</Steps>
+
+<Tip>
+  You can also move a component between different content blocks on the same page using the same drag-and-drop method — just drag it across block boundaries.
+</Tip>

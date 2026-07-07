@@ -1,0 +1,166 @@
+---
+title: "HH – Accordion: Expandable Content Sections for Your Page"
+sidebarTitle: "Accordion"
+description: "Learn how to add and configure the HH – Accordion component to create collapsible FAQ sections, guides, and organised content on your Squiz Matrix page."
+---
+
+The **HH – Accordion** component lets you organise content into expandable sections on your page. Each section displays a clickable heading; when a visitor clicks it, the hidden content beneath is revealed. This keeps your page clean and scannable while still making detailed information available on demand — perfect for FAQs, step-by-step guides, and grouped reference material.
+
+---
+
+## Overview
+
+Use the Accordion when you have multiple related pieces of content that not every visitor needs to read in full. Instead of a long page of text, you present concise headings and let readers choose what to expand. You can add between 1 and 20 accordion items per component, and an optional title displayed above the whole block helps orient readers.
+
+---
+
+## Editable fields
+
+### Component-level fields
+
+<ParamField body="title" type="string">
+  An optional heading displayed above the accordion block. Use this to introduce the section — for example, *Frequently Asked Questions* or *About This Programme*. If you leave it blank, no heading is shown above the accordion items.
+
+  **Default value:** `Section title`
+</ParamField>
+
+### Accordion Items (`accordion`)
+
+<ParamField body="accordion" type="array" required>
+  The list of expandable accordion items. You must add at least **1** item and can add up to **20**. Each item you create appears as a separate expandable row on the page.
+</ParamField>
+
+Each item inside the `accordion` array contains two fields:
+
+<ParamField body="accordion[].heading" type="string" required>
+  The clickable label that visitors see when the accordion is collapsed. Write this as a short, descriptive phrase that clearly signals what is inside — for example, *How do I reset my password?* or *Step 1: Create your account*.
+
+  **Default value:** `Heading content`
+</ParamField>
+
+<ParamField body="accordion[].content" type="FormattedText" required>
+  The rich-text body that is hidden until the visitor expands the item. You can include formatted text, links, and bullet lists using the inline editor in Squiz Matrix. This field supports full HTML formatting via the Matrix rich-text toolbar.
+</ParamField>
+
+<Note>
+  Both `heading` and `content` are required for every accordion item. You cannot save an item that is missing either field.
+</Note>
+
+---
+
+## Configuration
+
+The Accordion component supports inline editing directly on the page preview in Squiz Matrix — you can click into any heading or content area and edit without opening a separate form. All text fields (`title`, `heading`, and `content`) are also **translatable**, making the component suitable for multilingual sites.
+
+There are no additional layout or style options to configure; the visual appearance is controlled by your site's design system.
+
+<Tip>
+  If your site targets multiple languages, enter the content in your default language first, then use Matrix's translation workflow to create translated versions of each field.
+</Tip>
+
+---
+
+## Variant examples
+
+Below are three common ways to use the Accordion component. Each example shows how the component looks to your visitors.
+
+### FAQ section
+
+A classic use case: a list of questions with their answers hidden until clicked.
+
+<Accordion title="What is the returns policy?">
+  You can return any unused item within 30 days of purchase for a full refund. Items must be in their original packaging. To start a return, contact our support team with your order number.
+</Accordion>
+
+<Accordion title="How long does delivery take?">
+  Standard delivery takes 3–5 working days. Express delivery (next working day) is available at checkout for eligible postcodes.
+</Accordion>
+
+<Accordion title="Can I change my order after placing it?">
+  You can amend your order within 1 hour of placing it by contacting us directly. After that window, the order is passed to our fulfilment team and cannot be changed.
+</Accordion>
+
+---
+
+### Step-by-step guide
+
+Use the Accordion to break a process into numbered steps, revealing detail only when the reader is ready for it.
+
+<Accordion title="Step 1 — Create your account">
+  Go to the sign-up page and enter your name, email address, and a secure password. You will receive a confirmation email; click the link inside to activate your account.
+</Accordion>
+
+<Accordion title="Step 2 — Complete your profile">
+  Log in and navigate to **My Profile**. Fill in your contact details and upload a profile photo. A complete profile helps our team direct your enquiries to the right person.
+</Accordion>
+
+<Accordion title="Step 3 — Submit your first request">
+  From your dashboard, click **New Request** and fill in the form. Attach any relevant documents and click **Submit**. You will receive an acknowledgement within one business day.
+</Accordion>
+
+---
+
+### Grouped reference information
+
+Organise related but distinct topics under a shared section title, giving readers quick access to the topic they need.
+
+<Accordion title="Accessibility standards">
+  All content published on this site must meet WCAG 2.1 Level AA. This includes providing alternative text for images, ensuring sufficient colour contrast, and making all interactive elements keyboard-accessible.
+</Accordion>
+
+<Accordion title="Image guidelines">
+  Use high-resolution images (minimum 1200 px wide) in JPG or WebP format. Always add a descriptive alt-text value. Avoid images that contain embedded text, as these cannot be translated or resized for mobile.
+</Accordion>
+
+<Accordion title="Writing style">
+  Write in plain English at a reading age of around 12 years. Use active voice and short sentences. Avoid jargon, acronyms without explanation, and Latin phrases.
+</Accordion>
+
+---
+
+## Tips for best results
+
+<CardGroup cols={2}>
+  <Card title="Write clear, specific headings" icon="heading">
+    Your heading is the only thing visible before a visitor clicks. Make it self-explanatory so readers can decide immediately whether they need the content inside.
+  </Card>
+  <Card title="Keep content concise" icon="align-left">
+    Accordion content works best when it is focused and short. If a single item's content runs to several long paragraphs, consider whether it belongs on a dedicated page instead.
+  </Card>
+  <Card title="Group logically" icon="layer-group">
+    Order your items in a way that makes sense to the reader — chronologically for guides, alphabetically or by topic for FAQs. Avoid mixing unrelated topics in a single accordion block.
+  </Card>
+  <Card title="Preview on mobile" icon="mobile">
+    Accordion items stack vertically on small screens. Check your page in the Matrix mobile preview before publishing to confirm that headings do not wrap awkwardly and that the tap targets are comfortable to use.
+  </Card>
+</CardGroup>
+
+<Warning>
+  Do not add more than 20 accordion items to a single component. If you have more than 20 items, split them across two Accordion components and give each one a distinct `title` to help readers navigate.
+</Warning>
+
+---
+
+## How to add this component
+
+<Steps>
+  <Step title="Open the page in Squiz Matrix">
+    Navigate to the page where you want to add the accordion and open it for editing.
+  </Step>
+  <Step title="Add the component">
+    Click the **Add component** button in the page editor at the position where you want the accordion to appear.
+  </Step>
+  <Step title="Search for the component">
+    In the component search panel, type **HH – Accordion** and select it from the results.
+  </Step>
+  <Step title="Fill in your content">
+    Enter an optional **Title**, then add your accordion items — each with a **Heading** and **Content**. Use the rich-text toolbar to format the content field as needed.
+  </Step>
+  <Step title="Save and preview">
+    Save your changes and use the Matrix preview to check how the accordion looks and behaves before publishing.
+  </Step>
+</Steps>
+
+<Tip>
+  You can reorder accordion items by dragging them within the component editor. Put the most commonly accessed items at the top to reduce scrolling for your visitors.
+</Tip>

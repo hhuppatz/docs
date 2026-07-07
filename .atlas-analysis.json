@@ -1,0 +1,56 @@
+{
+  "projectType": "frontend",
+  "projectName": "UltraCX Component Library",
+  "projectDescription": "A library of custom Squiz Matrix web components (hh-accordion, hh-banner, hh-blockquote, hh-card) built for the Squiz DXP platform, enabling content editors to add rich, branded UI sections to web pages via the Visual Page Builder.",
+  "theme": "almond",
+  "primaryColor": "#fa4c2a",
+  "lightColor": "#443b33",
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "User Guides",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "how-to-add-a-component"
+            ]
+          },
+          {
+            "group": "Components",
+            "pages": [
+              "components/accordion",
+              "components/banner",
+              "components/blockquote",
+              "components/card"
+            ]
+          },
+          {
+            "group": "Best Practices",
+            "pages": [
+              "best-practices/content-guidelines",
+              "best-practices/accessibility"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "HH - Accordion: Collapsible FAQ/content sections with up to 20 items",
+    "HH - Banner: Full-width hero banner with video, image, or flat-colour background",
+    "HH - Block Quote: Styled pull-quote with optional title and author attribution",
+    "HH - Card: Versatile content card with heading, text, optional image and link",
+    "Inline editing via Squiz Visual Page Builder (data-sq-field attributes)",
+    "Conditional field display (e.g. Banner shows video/image fields only when relevant)",
+    "Translatable content fields for multilingual sites"
+  ],
+  "publicApiSurface": [
+    "hh-accordion: title (optional), accordion[].heading (required), accordion[].content (required, FormattedText)",
+    "hh-banner: mediaType (video|image|none, required), heading (required), videoSource (SquizLink, conditional), image (SquizImage, conditional)",
+    "hh-blockquote: quote (FormattedText, required), title (optional), author (optional), favouriteCoffee (optional)",
+    "hh-card: heading (required), contentType (optional), supportingText (FormattedText, optional), link (SquizLink, optional), image (SquizImage, optional)"
+  ]
+}

@@ -1,0 +1,219 @@
+---
+title: "HH – Banner: Full-Width Hero Sections with Video or Image"
+sidebarTitle: "Banner"
+description: "Learn how to configure the HH – Banner component to display a full-width hero section with a video, image, or flat-colour background on your Squiz Matrix page."
+---
+
+The **HH – Banner** component lets you create a striking, full-width hero section at the top of a page. Choose between a looping video background, a still image, or a clean flat-colour background — and pair it with a bold heading to communicate your page's purpose at a glance. It's the first thing visitors see, so a well-configured banner sets the tone for everything that follows.
+
+---
+
+## Overview
+
+Use the HH – Banner when you need a visually impactful introduction to a page. The component spans the full width of the content area and automatically adapts its layout depending on which media type you select. Only the fields relevant to your chosen media type are shown, keeping the editing experience straightforward.
+
+| Scenario | Recommended media type |
+|---|---|
+| Highlight a campaign or event with motion | Video |
+| Showcase a place, product, or team photo | Image |
+| Keep things clean and brand-aligned without media | None (flat colour) |
+
+---
+
+## Editable fields
+
+The fields available to you will vary depending on the **Media Type** you choose. The two core fields — **Media Type** and **Heading** — are always present.
+
+<ParamField path="mediaType" type="enum" required>
+  Controls which background the banner displays. Select one of three options:
+
+  - **`video`** — A looping internal video plays as the background. Selecting this reveals the **Internal Video Source** field.
+  - **`image`** — A still image fills the background. Selecting this reveals the **Image** field.
+  - **`none`** — No media is used; the banner displays a flat background colour.
+
+  This field appears as a **quick option** directly on the component toolbar, so you can switch variants without opening the full properties panel.
+
+  **Default:** `none`
+</ParamField>
+
+<ParamField path="heading" type="string" required>
+  The main heading text displayed over the banner. Keep it concise and clearly relevant to the page's purpose. This field is **inline-editable**, meaning you can click directly on the heading in the page canvas to type your changes.
+
+  **Default:** `Heading content`
+</ParamField>
+
+<ParamField path="videoSource" type="SquizLink">
+  *Conditional — only shown when **Media Type** is set to `video`.*
+
+  A link to an internal video asset stored in Squiz Matrix. Use the link picker to browse and select the video file. Only internal assets are supported; external video URLs are not accepted in this field.
+
+  This field is required when **Media Type** is `video`.
+</ParamField>
+
+<ParamField path="image" type="SquizImage">
+  *Conditional — only shown when **Media Type** is set to `image`.*
+
+  The background image displayed across the full width of the banner. Use the image picker to select a file from the asset library. Choose a high-quality, wide-format image for best results.
+
+  This field is required when **Media Type** is `image`.
+</ParamField>
+
+---
+
+## Media type variants
+
+Depending on the visual impact you want, there are three ways to configure the banner background.
+
+<Tabs>
+  <Tab title="Video background">
+    A looping video plays silently behind the heading, creating a dynamic and engaging hero section. This is ideal for campaigns, landing pages, or any context where motion adds energy.
+
+    **Required fields for this variant:**
+
+    | Field | Value |
+    |---|---|
+    | Media Type | `video` |
+    | Heading | Your heading text |
+    | Internal Video Source | Link to an internal `.mp4` or `.m4v` video asset |
+
+    **Steps to configure:**
+
+    <Steps>
+      <Step title="Set the media type">
+        In the component toolbar or properties panel, set **Media Type** to **Video**. The **Internal Video Source** field will appear.
+      </Step>
+      <Step title="Select your video">
+        Click the **Internal Video Source** field and use the link picker to browse to the video asset in Squiz Matrix. Select the file and confirm.
+      </Step>
+      <Step title="Enter a heading">
+        Click the heading text on the canvas to edit it inline, or update it in the properties panel.
+      </Step>
+      <Step title="Preview">
+        Use the page preview to check that the video plays as expected and the heading is clearly readable over the moving background.
+      </Step>
+    </Steps>
+
+    <Warning>
+      Use video backgrounds sparingly. Autoplay video increases page weight and may affect load times, particularly for users on slower connections or mobile devices. Always test performance before publishing.
+    </Warning>
+  </Tab>
+
+  <Tab title="Image background">
+    A still image fills the full width of the banner behind the heading. This is the most versatile option and works well for most pages.
+
+    **Required fields for this variant:**
+
+    | Field | Value |
+    |---|---|
+    | Media Type | `image` |
+    | Heading | Your heading text |
+    | Image | An image asset from the library |
+
+    **Steps to configure:**
+
+    <Steps>
+      <Step title="Set the media type">
+        In the component toolbar or properties panel, set **Media Type** to **Image**. The **Image** field will appear.
+      </Step>
+      <Step title="Select your image">
+        Click the **Image** field and use the image picker to browse and select your image from the asset library.
+      </Step>
+      <Step title="Enter a heading">
+        Click the heading text on the canvas to edit it inline, or update it in the properties panel.
+      </Step>
+      <Step title="Preview">
+        Use the page preview to confirm the image crops and displays correctly and that the heading is legible over it.
+      </Step>
+    </Steps>
+
+    <Tip>
+      For the sharpest result, use an image that is at least **1500 px wide**. Landscape-oriented images with a roughly 3:1 aspect ratio (e.g. 1500 × 500 px) fill the banner area most naturally.
+    </Tip>
+  </Tab>
+
+  <Tab title="Flat colour (no media)">
+    No image or video is used. The banner displays a flat background colour defined by your site's brand styles, with the heading rendered over it.
+
+    **Required fields for this variant:**
+
+    | Field | Value |
+    |---|---|
+    | Media Type | `none` |
+    | Heading | Your heading text |
+
+    **Steps to configure:**
+
+    <Steps>
+      <Step title="Set the media type">
+        In the component toolbar or properties panel, set **Media Type** to **None** (this is also the default when you first add the component).
+      </Step>
+      <Step title="Enter a heading">
+        Click the heading text on the canvas to edit it inline, or update it in the properties panel.
+      </Step>
+      <Step title="Preview">
+        Use the page preview to confirm the banner looks clean and the heading text is clearly visible.
+      </Step>
+    </Steps>
+
+    <Note>
+      The background colour in this variant is controlled by your site's global brand styles, not by a field in this component. If you need a different colour, speak to your web team.
+    </Note>
+  </Tab>
+</Tabs>
+
+---
+
+## Configuration: the Media Type quick option
+
+The **Media Type** field is exposed as a **quick option** on the component toolbar. This means you can switch between `video`, `image`, and `none` without opening the full properties panel — just select the component on the canvas and use the toolbar to choose your variant.
+
+When you change the media type:
+
+- Switching **to** `video` or `image` reveals the corresponding media field in the panel.
+- Switching **away from** `video` or `image` hides the media field, but your previously selected asset is preserved in case you switch back.
+
+<Note>
+  Although previously selected assets are preserved when switching media types, always double-check your selection after switching to ensure the correct file is still linked.
+</Note>
+
+---
+
+## Tips for best results
+
+<Tip>
+  **Heading clarity** — Your heading sits on top of the background media. Use short, punchy text (ideally fewer than ten words) so it remains readable regardless of the background. If your image or video is very bright or busy, consider asking your web team whether a text overlay or tint is available in your site's theme.
+</Tip>
+
+<Tip>
+  **Image quality** — Use the highest quality image available, but make sure the file has been optimised before upload (aim for under 500 KB for a 1500 px wide JPEG). Large unoptimised images slow down the page for everyone.
+</Tip>
+
+<Tip>
+  **Video usage** — Limit video banners to pages where motion genuinely adds value, such as campaign landing pages or homepages. Avoid using autoplay video on content-heavy pages where it may distract from the reading experience.
+</Tip>
+
+<Tip>
+  **Always preview** — The in-editor canvas gives a good approximation, but always use the full-page preview before publishing. Check the banner on both desktop and mobile viewports to make sure nothing is cropped unexpectedly.
+</Tip>
+
+---
+
+## How to add the Banner component to a page
+
+<Steps>
+  <Step title="Open your page in Squiz Matrix">
+    Navigate to the page where you want the banner and open it in the page editor.
+  </Step>
+  <Step title="Add the component">
+    In the component panel or content area, click **Add component** and search for **HH – Banner**. Select it to insert it onto the page.
+  </Step>
+  <Step title="Choose your media type">
+    Use the quick option in the toolbar or open the properties panel and set the **Media Type** to `video`, `image`, or `none`.
+  </Step>
+  <Step title="Fill in the required fields">
+    Enter your **Heading** and — if you chose `video` or `image` — select the relevant media asset using the field picker.
+  </Step>
+  <Step title="Save and preview">
+    Save your changes and use the preview feature to review the banner before publishing.
+  </Step>
+</Steps>

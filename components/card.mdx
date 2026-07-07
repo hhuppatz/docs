@@ -1,0 +1,174 @@
+---
+title: "HH – Card: Display Content Items with Heading, Text and Image"
+sidebarTitle: "Card"
+description: "Learn how to add and configure the HH – Card component to showcase content items like blog posts, team profiles, or services on your Squiz Matrix page."
+---
+
+The **HH – Card** component lets you display individual content items in a clean, structured layout. Each card can include a heading, a short description, an image, a content-type label, and a link — giving your visitors a focused, scannable snapshot of a single topic. Use cards to promote blog posts, highlight team members, surface key services, or draw attention to any content that benefits from a visual, self-contained presentation.
+
+---
+
+## How to add the Card component
+
+1. Open your page in **Squiz Matrix** and enter editing mode.
+2. Click the **Add Component** button in the region where you want the card to appear.
+3. Search for **HH – Card** and select it.
+4. Fill in the fields described below and save your changes.
+
+<Note>
+  The Card component is designed to live inside a layout container such as a grid or columns component. Place multiple cards side by side to create a consistent card-grid layout.
+</Note>
+
+---
+
+## Editable fields
+
+<ParamField body="heading" type="string" required>
+  The card's main title. This is the most prominent piece of text on the card and the only field that is required.
+
+  **Example values:** `"Our Latest Project"`, `"Meet the Team"`, `"Cloud Hosting"`
+
+  Keep your heading to a single short phrase or sentence. Longer headings wrap awkwardly and reduce visual impact.
+</ParamField>
+
+<ParamField body="contentType" type="string" default="Content type">
+  A short label that appears **above** the heading to give visitors instant context about what type of content the card represents.
+
+  **Example values:** `"Blog Post"`, `"Announcement"`, `"Service"`, `"Case Study"`
+
+  Leave this field blank if the card's context is already clear from the page it sits on. When you do use it, aim for one or two words — anything longer crowds the card header.
+</ParamField>
+
+<ParamField body="supportingText" type="FormattedText">
+  A brief description displayed **below** the heading. This field accepts rich text, so you can apply bold or italic formatting and include inline links if needed.
+
+  **Example value:** `"Learn about the steps we took to deliver this project on time and within budget."`
+
+  Aim for one to two short sentences. The goal is to give visitors just enough information to decide whether to click through — not to tell the whole story.
+</ParamField>
+
+<ParamField body="link" type="SquizLink">
+  A clickable link that takes visitors to the full content item. The link wraps the entire card, and the link text appears as a call-to-action at the bottom of the card.
+
+  Configure two things inside this field:
+  - **URL** — the destination page or asset.
+  - **Link text** — the label shown at the bottom of the card (e.g. `"Read more"`, `"View profile"`, `"Learn more"`).
+
+  You can also choose whether the link opens in the same tab or a new tab.
+</ParamField>
+
+<ParamField body="image" type="SquizImage">
+  An image displayed at the top of the card. The image is sourced from the **Squiz Digital Asset Manager (DAM)**, which means you can crop and resize it directly in the field picker.
+
+  Use a high-quality image that clearly represents the content of the card. Decorative images without meaningful context should always include a descriptive **alt text** value for accessibility.
+</ParamField>
+
+---
+
+## Card layout combinations
+
+The Card component is flexible — you can use any combination of fields to match what your content needs. The tabs below show the most common layouts to guide your decisions.
+
+<Tabs>
+  <Tab title="Full card (recommended)">
+    The richest layout: image, content-type label, heading, supporting text, and a link. Best for article previews, case studies, or featured services where you want maximum engagement.
+
+    | Field          | Value example              |
+    |----------------|----------------------------|
+    | `image`        | A relevant photo or graphic |
+    | `contentType`  | `"Blog Post"`              |
+    | `heading`      | `"Oil Painting Session"`   |
+    | `supportingText` | `"Explore our beginner-friendly evening classes, running every Thursday from 6 pm."` |
+    | `link`         | URL + `"Read more"`        |
+
+    <Tip>
+      This combination is the most visually complete. It works especially well when you display two or three full cards side by side in a grid.
+    </Tip>
+  </Tab>
+
+  <Tab title="Text-only card">
+    Drop the image for a minimal, text-driven card. Useful when you have no suitable visual, or when you want a lightweight layout for lists of services or FAQs.
+
+    | Field            | Value example                          |
+    |------------------|----------------------------------------|
+    | `image`          | *(leave blank)*                        |
+    | `contentType`    | `"Service"`                            |
+    | `heading`        | `"Cloud Hosting"`                      |
+    | `supportingText` | `"Scalable, secure hosting managed by our team."` |
+    | `link`           | URL + `"View plans"`                   |
+
+    <Note>
+      Without an image the card renders a compact layout. Make sure your heading and supporting text are strong enough to draw the visitor's attention on their own.
+    </Note>
+  </Tab>
+
+  <Tab title="Heading + link only">
+    The simplest possible layout — just a heading and a destination link. Good for navigation-style cards or quick-access tiles where brevity is the priority.
+
+    | Field            | Value example          |
+    |------------------|------------------------|
+    | `image`          | *(leave blank)*        |
+    | `contentType`    | *(leave blank)*        |
+    | `heading`        | `"Annual Report 2024"` |
+    | `supportingText` | *(leave blank)*        |
+    | `link`           | URL + `"Download PDF"` |
+  </Tab>
+
+  <Tab title="Image + heading (no link)">
+    A purely presentational card — great for team profile grids or gallery-style displays where clicking through is not the goal.
+
+    | Field            | Value example              |
+    |------------------|----------------------------|
+    | `image`          | A headshot or product image |
+    | `contentType`    | `"Team Member"`            |
+    | `heading`        | `"Jane Smith"`             |
+    | `supportingText` | `"Senior Product Designer"` |
+    | `link`           | *(leave blank)*            |
+
+    <Warning>
+      If you leave the `link` field blank, the card still renders an anchor element pointing to `#`. Visitors clicking the card will not navigate anywhere. Use this layout intentionally — only when the card is genuinely non-interactive.
+    </Warning>
+  </Tab>
+</Tabs>
+
+---
+
+## Example card grid
+
+Place multiple Card components inside a grid or columns container to create a consistent, structured layout like the one below.
+
+<CardGroup cols={3}>
+  <Card title="Oil Painting Session" icon="palette">
+    **Painting** · Explore our beginner-friendly evening classes running every Thursday from 6 pm.
+  </Card>
+  <Card title="Cloud Hosting" icon="cloud">
+    **Service** · Scalable, secure hosting managed end-to-end by our infrastructure team.
+  </Card>
+  <Card title="Meet Jane Smith" icon="user">
+    **Team Member** · Senior Product Designer with 10 years of experience in UX and brand systems.
+  </Card>
+</CardGroup>
+
+---
+
+## Tips for best results
+
+<Tip>
+  **Keep image dimensions consistent.** When displaying cards in a grid, use images with the same aspect ratio (e.g. 4:3 or 1:1) across every card. Mismatched dimensions create an uneven, unprofessional layout.
+</Tip>
+
+<Tip>
+  **Write concise, action-oriented link text.** Labels like "Read more", "View profile", or "Learn more" perform better than vague labels like "Click here". The link text is the last thing a visitor reads before deciding to engage.
+</Tip>
+
+<Tip>
+  **Use the Content Type label sparingly.** It works best when the surrounding page context is mixed — for example, a page that features both blog posts and events. If every card on a page shares the same content type, the label adds little value and can be safely omitted.
+</Tip>
+
+<Tip>
+  **Preview before publishing.** The component includes a built-in **default preview** in the Squiz Matrix editor. Use it to check that your image, text, and link all appear as expected before the page goes live.
+</Tip>
+
+<Warning>
+  **Alt text is required for accessible images.** When you add an image via the `image` field, always fill in a meaningful alt text description in the DAM picker. Leaving it blank fails WCAG accessibility guidelines and may affect your site's compliance.
+</Warning>

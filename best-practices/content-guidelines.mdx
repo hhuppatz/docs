@@ -1,0 +1,205 @@
+---
+title: "Content Guidelines for UltraCX Components"
+sidebarTitle: "Content Guidelines"
+description: "Writing, image, and formatting guidelines to help content editors create consistent, high-quality pages using the UltraCX Squiz Matrix components."
+---
+
+Good content doesn't just fill a component — it makes it work harder for your audience. These guidelines cover writing, image selection, and formatting conventions for the four core UltraCX components: **Accordion**, **Banner**, **Block Quote**, and **Card**. Follow them consistently to deliver pages that are clear, scannable, and on-brand.
+
+---
+
+## Writing Effective Headings
+
+Headings are the first thing users read. Each component uses headings differently, so match your tone and style to the context.
+
+### Accordion item headings
+
+Accordion headings act as questions or prompts — they invite users to click. Write them in one of two styles:
+
+- **Question form** — ideal for FAQs: *"How do I update my billing details?"*
+- **Imperative form** — ideal for guides or instructions: *"Update your billing details"*
+
+Keep every accordion heading under 10 words. Avoid starting multiple headings with the same word, which makes items harder to distinguish when skimming.
+
+<Tip>
+If you have an optional **Section Title** above your accordion, use it to frame the group — for example, "Frequently Asked Questions" — so the individual headings can be shorter and more specific.
+</Tip>
+
+### Banner headings
+
+A banner heading is the first thing visitors see on a page. Use **Title Case** (capitalise the first letter of every major word) and aim for 4–10 words. The heading should communicate the page's purpose at a glance — it is not the place for a sentence or a tagline.
+
+| ✅ Do | ❌ Don't |
+|---|---|
+| Get Started With UltraCX Today | Welcome to our platform, we hope you enjoy it |
+| Services for Growing Businesses | services page |
+| Contact Our Support Team | Click here to find out how to get in touch |
+
+### Card headings
+
+Card headings are short labels, not full sentences. Write them in **Title Case**, limit them to one phrase (ideally under 8 words), and make them specific enough to stand alone without the supporting text.
+
+### Accordion section title (optional)
+
+The optional **Title** field above an accordion group follows the same Title Case rule as banner headings. Keep it to 3–6 words.
+
+---
+
+## Text Length Guidelines
+
+Each component has a different visual container, so the right amount of text varies.
+
+<CardGroup cols={2}>
+  <Card title="Accordion Content" icon="chevrons-down">
+    Write 2–5 sentences per panel, or use a short bulleted list. Long paragraphs discourage users from expanding items. If the answer genuinely needs more detail, consider breaking it into two accordion items or linking to a dedicated page.
+  </Card>
+  <Card title="Banner Heading" icon="image">
+    4–10 words maximum. The heading sits over a visual background, so every word must earn its place. Avoid punctuation other than a question mark or colon.
+  </Card>
+  <Card title="Block Quote" icon="quote" >
+    One to three sentences is the sweet spot. Longer quotes lose impact and become hard to style. If the original quote is longer, use an ellipsis to shorten it — but never change the meaning.
+  </Card>
+  <Card title="Card Supporting Text" icon="layout-panel-top">
+    Aim for 1–2 short sentences (under 30 words total). Supporting text should expand on the heading, not repeat it. If you find yourself writing more, move the detail to the linked destination page.
+  </Card>
+</CardGroup>
+
+<Note>
+The **Content Type** label on a Card (for example, "Blog Post" or "Case Study") should be 1–2 words only. It sits above the heading and quickly tells users what kind of content they are about to read.
+</Note>
+
+---
+
+## Image Guidelines
+
+### Optimise before you upload
+
+Always compress images before uploading them to Squiz Matrix. Large files slow page loads and penalise your search ranking. Aim for:
+
+- **JPEG** for photographs — compress to under 200 KB where possible.
+- **PNG** for images that need transparency — keep under 150 KB.
+- **WebP** if your asset library supports it — typically 25–35% smaller than JPEG at the same quality.
+
+Use a tool such as [Squoosh](https://squoosh.app) or your CMS's built-in image optimiser before uploading.
+
+### Banner images
+
+The Banner component displays an image as a full-width background behind the heading. Use images that:
+
+- Are at least **1440 × 600 px** (landscape orientation).
+- Have a **16:5 aspect ratio** — this prevents unwanted cropping on wide screens.
+- Have enough contrast or a dark region where the heading text will sit (usually the lower-left or centre of the image).
+
+<Warning>
+Avoid images where the focal point is close to an edge. Responsive resizing can crop edge content on smaller screens.
+</Warning>
+
+### Card images
+
+The Card component displays an image as a visual background or thumbnail. Use images that:
+
+- Are at least **800 × 600 px**.
+- Have a **4:3 aspect ratio** for consistency when multiple cards appear in a row.
+- Communicate the card's subject at a glance — abstract or decorative images work less well here than subject-specific ones.
+
+### Alt text
+
+Every image you upload must have descriptive alt text. See the [Accessibility Guidelines](/best-practices/accessibility) for detailed guidance on writing good alt text.
+
+---
+
+## Link Best Practices
+
+Links inside Card and Accordion content signal the next action to your user. Write link text that is:
+
+- **Action-oriented** — start with a verb: *"Read the full case study"*, *"Download the template"*, *"Learn more about pricing"*.
+- **Specific** — tell users where they are going, not just that they can go somewhere.
+- **Unique on the page** — if two links go to different destinations, their text must differ.
+
+<CardGroup cols={2}>
+  <Card title="✅ Good link text" icon="circle-check">
+    - "Read more about our services"
+    - "Download the onboarding guide"
+    - "Learn more about accessibility"
+    - "View the full project case study"
+  </Card>
+  <Card title="❌ Avoid these" icon="circle-x">
+    - "Click here"
+    - "Read more" (without context)
+    - "Here"
+    - "Link"
+    - "More information"
+  </Card>
+</CardGroup>
+
+<Tip>
+On a Card, the **Link** field includes a separate text label. Always fill in the label — don't rely on the URL itself to act as link text.
+</Tip>
+
+---
+
+## Consistency Across Pages
+
+Inconsistency in heading levels, image sizes, or formatting creates a disjointed experience and undermines trust. Follow these rules when deploying multiple instances of the same component on a site.
+
+### Heading levels
+
+- Decide on a heading level for your Card headings before you start and keep it the same across all cards in a grid.
+- Accordion item headings are all the same level by design — do not try to create a hierarchy within an accordion.
+- Banner headings are always the page's primary heading (H1). Do not use a Banner below an existing H1.
+
+### Image dimensions
+
+- Use the same aspect ratio for all Card images across a section or template. Mixed ratios create uneven card heights and look unfinished.
+- Use the same banner image dimensions across all pages that share a template.
+
+<Tip>
+Create a shared image spec document or a pinned note in your CMS workspace to record the agreed dimensions for each page template. This saves time and prevents drift when multiple editors work on the same site.
+</Tip>
+
+### Block Quote consistency
+
+If you use Block Quotes across multiple pages:
+
+- Use a consistent **Title** label style — either always include one, or never do.
+- Always attribute quotes to a named author. Anonymous quotes erode credibility unless the content explicitly calls for them.
+
+### Accordion ordering
+
+Present accordion items in the order that matches how your audience thinks, not the order information was written. For FAQs, put the most common questions first. For guides, use a logical step-by-step order.
+
+---
+
+## Previewing Your Work
+
+Always use the **Preview** feature in Squiz Matrix before publishing any page that uses these components.
+
+<Warning>
+What you see in the editing interface is not always what your users will see. Components such as the Banner and Card render differently at different screen sizes. Preview is the only reliable way to catch layout problems before they go live.
+</Warning>
+
+When previewing, check the following:
+
+<Accordion title="Banner preview checklist">
+  - Does the heading text remain readable over the background image or video at full width?
+  - Is the image cropped sensibly on a tablet and mobile viewport?
+  - If using a video background, does it load quickly and not autoplay sound?
+</Accordion>
+
+<Accordion title="Accordion preview checklist">
+  - Do all item headings fit on one line at desktop width?
+  - Does the expanded content look clean without excessive whitespace or overflow?
+  - Does the accordion display correctly on a mobile screen?
+</Accordion>
+
+<Accordion title="Card preview checklist">
+  - Do all cards in a group have consistent image dimensions?
+  - Is the heading and supporting text visually balanced across all cards?
+  - Does the link label make sense without reading the heading?
+</Accordion>
+
+<Accordion title="Block Quote preview checklist">
+  - Is the quote text short enough to avoid wrapping awkwardly on mobile?
+  - Is the author name attributed correctly?
+  - Does the title (if used) add context rather than repeat the quote?
+</Accordion>

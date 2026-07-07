@@ -1,0 +1,212 @@
+---
+title: "Accessibility Guidelines for UltraCX Components"
+sidebarTitle: "Accessibility"
+description: "Accessibility best practices for content editors using UltraCX components — covering alt text, heading hierarchy, link text, and keyboard navigation."
+---
+
+Accessibility is not optional — it is a core quality standard for every page you publish. When you use UltraCX components thoughtfully, the result is a site that works for keyboard users, screen reader users, people with low vision, and anyone on an assistive device. This guide explains the specific actions you, as a content editor, can take to keep the **Accordion**, **Banner**, **Block Quote**, and **Card** components accessible.
+
+---
+
+## Alt Text for Images
+
+Alt text is a short description that screen readers read aloud when a user encounters an image. Without it, visually impaired users get no information about what the image contains.
+
+### When alt text is required
+
+| Component | Image field | Alt text required? |
+|---|---|---|
+| Banner | Background image | **Yes** |
+| Card | Background / thumbnail image | **Yes** |
+| Block Quote | No image field | N/A |
+| Accordion | No image field | N/A |
+
+### How to write good alt text
+
+Good alt text describes what the image *shows* and why it is relevant — it does not describe that it is "an image of" something.
+
+<CardGroup cols={2}>
+  <Card title="✅ Good alt text" icon="circle-check">
+    - "A student sitting at a laptop in a sunlit library"
+    - "The Sydney skyline at dusk, seen from the Harbour Bridge"
+    - "A team of four colleagues reviewing a document around a table"
+  </Card>
+  <Card title="❌ Avoid these" icon="circle-x">
+    - "image.jpg"
+    - "banner"
+    - "Image of a person"
+    - "photo"
+    - Leaving the alt text field blank when the image conveys meaning
+  </Card>
+</CardGroup>
+
+Keep alt text under 125 characters. If an image needs a longer explanation (such as a chart or diagram), add a visible caption below it instead.
+
+### Decorative images
+
+If an image is purely decorative — it adds visual interest but conveys no information — set the alt text to empty (`""`). This tells screen readers to skip the image entirely, reducing noise for assistive technology users.
+
+<Note>
+In Squiz Matrix, the image field may prompt you for alt text when you select an asset. Fill it in accurately every time, even if the field is not marked as required. An image without alt text is an accessibility failure.
+</Note>
+
+---
+
+## Heading Hierarchy
+
+Screen reader users often navigate a page by jumping between headings — it is their equivalent of skimming visually. A broken or skipped heading hierarchy makes this impossible.
+
+### The golden rule
+
+Never skip a heading level. H1 → H2 → H3 is correct. H1 → H3 (skipping H2) is not.
+
+### Banner heading
+
+The Banner heading is the page's primary title. It must always be set as an **H1**. Every page should have exactly one H1 — do not place a Banner below another H1 heading that already appears on the page.
+
+### Card headings
+
+When multiple Cards appear in a grid, their headings are typically set at **H2** or **H3** level, depending on where the card grid sits in the page structure. Before you publish, confirm with your developer which heading level the Card component renders so you can write heading text that makes sense at that level in context.
+
+<Warning>
+Do not use heading fields just to make text look larger or bolder. Headings communicate document structure, not just visual weight. If you want to style a piece of text, ask your developer — do not repurpose a heading for decoration.
+</Warning>
+
+### Accordion headings and page structure
+
+Each accordion item heading is part of your page's heading hierarchy. Keep accordion item headings descriptive enough to make sense when read in isolation — a screen reader user navigating by heading will encounter them without the surrounding context.
+
+<Tip>
+If your accordion section sits beneath an H2, set the accordion item headings at H3 level. Confirm the rendered heading level with your developer and write text that is meaningful at that depth.
+</Tip>
+
+---
+
+## Link Text
+
+Screen readers can compile a list of all links on a page and read them out in sequence. When link text is vague — "click here", "read more", "here" — this list becomes meaningless.
+
+### Write descriptive link text every time
+
+Link text must describe the destination or action, not just indicate that a link exists.
+
+<CardGroup cols={2}>
+  <Card title="✅ Accessible link text" icon="circle-check">
+    - "Read more about our accessibility policy"
+    - "Download the 2024 Annual Report (PDF)"
+    - "Learn more about the Card component"
+    - "Contact our support team"
+  </Card>
+  <Card title="❌ Inaccessible link text" icon="circle-x">
+    - "Click here"
+    - "Read more" (standalone, no context)
+    - "Here"
+    - "Link"
+    - A raw URL, e.g. `https://example.com/page`
+  </Card>
+</CardGroup>
+
+On a **Card**, the **Link** field includes a label — always fill it in with action-oriented text. Do not leave it as the default or use the URL as the label.
+
+<Note>
+"Read more" is acceptable *only* when it is accompanied by a visually hidden context string — for example, screen readers would hear "Read more about our services". This is a developer-level implementation. As a content editor, write the full descriptive label and let the developer handle any visual truncation.
+</Note>
+
+---
+
+## Accordion Accessibility
+
+The Accordion component is built with keyboard navigation support. Users can tab to each accordion heading and press Enter or Space to expand or collapse it — you do not need to add anything to enable this.
+
+Your job as a content editor is to keep the headings accessible.
+
+<Accordion title="What makes an accordion heading accessible?">
+  A good accordion heading is specific, unique within its group, and makes sense when read out of context. Avoid headings like "More information" or "Details" — a screen reader user navigating by heading cannot tell these apart.
+
+  **Instead, write:**
+  - "What documents do I need to apply?"
+  - "How long does delivery take?"
+  - "Cancel or change my subscription"
+</Accordion>
+
+<Accordion title="How many items should an accordion have?">
+  The component supports up to 20 items, but more than 8–10 starts to feel overwhelming. If you have many items, consider whether they can be grouped under separate accordions on different pages, or whether a table or a dedicated FAQ page would serve users better.
+</Accordion>
+
+<Accordion title="Can I put interactive content inside an accordion panel?">
+  Yes — the content field supports formatted text including links. Ensure any links inside a panel follow the descriptive link text guidelines above. Avoid embedding another accordion inside a panel, as nested expand/collapse patterns can confuse keyboard and screen reader users.
+</Accordion>
+
+---
+
+## Banner Heading: Colour Contrast
+
+When you place a heading over a background image or video, the text must have sufficient contrast against whatever sits behind it. The Web Content Accessibility Guidelines (WCAG) require a **contrast ratio of at least 4.5:1** for normal text and **3:1** for large text.
+
+**What you can do as a content editor:**
+
+- Choose banner images that have a clearly dark or clearly light region where the heading will sit.
+- Avoid images with busy, high-contrast patterns directly behind the text area.
+- If you are not sure whether contrast is sufficient, use a tool like the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) by sampling the background colour and the heading text colour.
+
+<Warning>
+A beautiful image is not worth using if it makes your heading unreadable. If in doubt, ask your designer to add a semi-transparent overlay behind the text — this is a common and accessible solution.
+</Warning>
+
+---
+
+## Video Banner Accessibility
+
+If you use the **video** media type on a Banner, consider the following:
+
+<Accordion title="Autoplay and motion sensitivity">
+  Autoplaying video can trigger discomfort or distraction — and for users with vestibular disorders, it can cause genuine physical distress. Ensure the video:
+  - Does not autoplay with sound.
+  - Does not contain rapid flashing or strobing effects (no more than three flashes per second).
+  - Ideally provides a pause or stop control so users can stop motion if needed.
+
+  These controls are implemented by your developer, but you control the choice of video content. Avoid videos with rapid cuts or unpredictable motion.
+</Accordion>
+
+<Accordion title="Audio in banner videos">
+  Banner videos should not include audio by default. If audio is part of the video, it must not autoplay. A visitor arriving on a page that unexpectedly plays audio cannot quickly silence it — this is disorienting and inaccessible.
+</Accordion>
+
+<Accordion title="Captions and transcripts">
+  If a banner video contains speech or audio that conveys meaning, it needs captions. Purely decorative background videos (no speech, sound effects, or meaningful audio) do not require captions. If you are unsure whether your video's audio conveys meaning, err on the side of adding captions.
+</Accordion>
+
+---
+
+## Testing Your Components
+
+Before publishing, run through the following checks. They take under five minutes and will catch the most common accessibility problems.
+
+### Preview on mobile
+
+Resize your browser or use the mobile preview in Squiz Matrix. Check that:
+
+- Accordion items are large enough to tap without accidentally hitting adjacent items.
+- Card text does not overflow or truncate unexpectedly.
+- The Banner heading is still legible over the image at a narrow viewport.
+
+### Keyboard navigation check
+
+Tab through your page using only the keyboard (no mouse). Verify that:
+
+- You can reach and activate every accordion item using Tab and Enter/Space.
+- Card links are reachable and have a visible focus indicator.
+- You do not get trapped in any component — pressing Tab always moves you forward.
+
+### Screen reader check
+
+<Note>
+You do not need to be a screen reader expert to do a basic check. On macOS, press **Cmd + F5** to launch VoiceOver. On Windows, press **Win + Ctrl + Enter** to launch Narrator. Navigate to your preview page and listen for the following:
+- Are image descriptions meaningful?
+- Do link labels make sense when heard in isolation?
+- Are accordion headings clear and distinct?
+</Note>
+
+<Tip>
+If your organisation has access to an accessibility auditing tool integrated with Squiz Matrix, run it on every page before scheduling publication. Automated checks catch roughly 30–40% of accessibility issues — the manual checks above cover the rest.
+</Tip>

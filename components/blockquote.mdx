@@ -1,0 +1,73 @@
+---
+title: "HH – Block Quote: Highlight Impactful Quotes on Your Page"
+sidebarTitle: "Blockquote"
+description: "Learn how to add and configure the HH – Block Quote component to display styled pull-quotes with author attribution on your Squiz Matrix page."
+---
+
+The **HH – Block Quote** component lets you display a visually styled pull-quote anywhere on your page. Use it to give extra weight to a powerful statement, feature a customer testimonial, or call out a key insight — the component presents the quote text, the author's name, and an optional section title in a clean, distinctive layout that stands out from the surrounding content.
+
+## How to add this component
+
+In Squiz Matrix, navigate to the page where you want to add the quote. Open the component picker, search for **HH – Block Quote**, and insert it into your chosen content zone. The component panel will open so you can fill in the fields described below.
+
+## Editable fields
+
+<ParamField body="title" type="string">
+  A short heading that appears above the quote to give it context — for example, *"Customer Testimonial"* or *"Words of Wisdom"*. This field is **optional**; if you leave it blank the heading area is hidden and only the quote itself is shown.
+
+  **Default value:** `Section title`
+</ParamField>
+
+<ParamField body="quote" type="FormattedText" required>
+  The main text of the quote. This is the only **required** field — the component will not render without it. The field supports rich-text formatting, so you can apply bold, italic, or inline links directly inside the quote if needed.
+
+  Aim for concise, punchy wording. Long quotes can be harder to read and may disrupt the visual rhythm of your page.
+</ParamField>
+
+<ParamField body="author" type="string">
+  The name of the person being quoted, displayed beneath the quote text as an attribution. This field is **optional**; if you leave it blank no author line appears.
+
+  **Default value:** `Author`
+</ParamField>
+
+<ParamField body="favouriteCoffee" type="string">
+  A fun, optional field for recording the quoted person's favourite coffee order. This is a quirky Easter-egg field — it is stored with the component data but is **not displayed** on the published page unless a value is entered.
+
+  **Default value:** `Latte`
+
+  <Note>
+    Leave this blank in production content unless your editorial team has a specific creative use for it. It will not affect the appearance or accessibility of the published component.
+  </Note>
+</ParamField>
+
+## Common use cases
+
+<CardGroup cols={3}>
+  <Card title="Customer testimonials" icon="quote-left">
+    Feature positive feedback from clients or students. Set **Title** to something like *"What our customers say"*, paste the testimonial into **Quote**, and add the customer's name in **Author**.
+  </Card>
+  <Card title="Key statistics callouts" icon="chart-bar">
+    Highlight a striking figure or research finding — for example, *"92% of users reported higher satisfaction after switching."* Leave **Author** blank or credit the source directly in the quote text.
+  </Card>
+  <Card title="Inspirational quotes" icon="star">
+    Break up long editorial content with a well-chosen quote from a leader, academic, or public figure. Use **Title** to signal the section context and **Author** to attribute the words correctly.
+  </Card>
+</CardGroup>
+
+## Tips for best results
+
+<Tip>
+  **Keep quotes concise.** One or two sentences work best. If the original quote is longer, consider trimming it and adding an ellipsis (…) to indicate the omission — just make sure the meaning is not changed.
+</Tip>
+
+<Tip>
+  **Stay consistent across the site.** If you are using block quotes on multiple pages, agree on a house style with your team: always include an author, always use a title, and use the same capitalisation conventions. Consistency builds trust with your readers.
+</Tip>
+
+<Tip>
+  **Preview before publishing.** After saving your changes, use Squiz Matrix's preview mode to check how the quote looks in the full page context. Verify that the title, quote text, and author line all appear as expected and that no placeholder default text (such as *"Section title"* or *"Author"*) has been left in unintentionally.
+</Tip>
+
+<Warning>
+  The **Quote** field is required. If you save the component without entering quote text, the component will not render on the published page.
+</Warning>
