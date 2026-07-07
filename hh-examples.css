@@ -64,7 +64,11 @@
 
 /* ==========================================================================
    HH – Accordion  (hh-accordion/css/accordion.scss)
-   Note: the source declares item borders with `rgb(var(--color-text) 0.2)`,
+   Note 1: the real component uses <details>/<summary>, but Mintlify strips
+   those elements from MDX, so the docs examples use divs with the same
+   classes; hh-examples.js recreates the toggle by setting the same [open]
+   attribute this CSS keys off.
+   Note 2: the source declares item borders with `rgb(var(--color-text) 0.2)`,
    which is invalid CSS, so no borders render on the live site. Reproduced
    faithfully here (no borders).
    ========================================================================== */
